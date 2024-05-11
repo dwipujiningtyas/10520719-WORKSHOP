@@ -5,7 +5,7 @@ name: 'Deployment'
 on:
   push:
     branches:
-      - production
+      - main
 
 jobs:
   build:
@@ -42,4 +42,4 @@ jobs:
           host: ${{ secrets.VPS_HOSTNAME }}
           username: ${{ secrets.VPS_USERNAME }}
           key: ${{ secrets.VPS_KEY }}
-          script: cd {10520719-WORKSHOP}/; git pull origin main; npm run build; pm2 restart 10520719-WORKSHOP;
+          script: cd 10520719-WORKSHOP/; git pull origin main; npm run build; pm2 restart 10520719-WORKSHOP;
